@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+// first the left part is sorted then the right
 
 void merge(int arr[], int lb, int mid, int ub)
 {
@@ -42,9 +43,9 @@ void merge(int arr[], int lb, int mid, int ub)
 
 void mergeSort(int arr[], int lb, int ub)
 {
-    if(lb<ub)     
+    if(lb<ub)  // cause it will be a single element array which will always be sorted 
     {
-        int mid = (lb+ub)/2;
+        int mid = (lb+ub)/2; 
         mergeSort(arr,lb,mid);
         mergeSort(arr,mid+1,ub);
         merge(arr,lb,mid,ub);

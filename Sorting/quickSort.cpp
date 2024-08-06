@@ -2,6 +2,9 @@
 using namespace std;
 // Time complexity - O(N^2)
 
+// 1. choose any element as pivot element
+// 2. all elements less than pivot to the left side and greater to the right side
+
 int partition(int a[], int lb, int ub) // parameter declaration is treated as a pointer to the first element of the array.
 {
     int pivot = a[lb]; // keeps changing
@@ -9,8 +12,8 @@ int partition(int a[], int lb, int ub) // parameter declaration is treated as a 
     int end = ub;
 
     while(start <= end)
-    {
-        while(a[start] <= pivot)
+    { 
+        while(a[start] >= pivot)
         {
             start++;
         }
@@ -23,7 +26,6 @@ int partition(int a[], int lb, int ub) // parameter declaration is treated as a 
             swap(a[start],a[end]);
         }
     }
-    
         swap(a[end],a[lb]);
 
     return end;
